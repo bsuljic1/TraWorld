@@ -7,4 +7,4 @@ from .models import Kontinent
 
 def homepage(request):
     kontinenti = Kontinent.objects.all().order_by('naziv')
-    return render(request, 'homepage.html', {'kontinenti': kontinenti})
+    return render(request, 'index.html', {'kontinenti': kontinenti})
