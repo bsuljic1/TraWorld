@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <section id="hero">
+    <div class="hero-container">
+        <h1>Prijavi se</h1>
+        <form class="login-forma" action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</section>
+{% endblock %}
