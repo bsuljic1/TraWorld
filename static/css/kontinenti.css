@@ -1,0 +1,23 @@
+.kontinenti{
+    margin-top:20px;
+}
+
+.kontinent{
+    display:inline-block;
+    align-content: flex-start;
+    margin-right:5px;
+}
+
+.kontinent button{
+    background:#85b0be;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 10px 28px;
+    border-radius: 4px;
+    transition: 0.5s;
+    border: 2px solid #85b0be;
+    color: #fff;
+    width:100%;
+}

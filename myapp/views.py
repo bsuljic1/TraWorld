@@ -5,7 +5,7 @@ from django.contrib.auth import login, logout
 
 def homepage(request):
     kontinenti = Kontinent.objects.all().order_by('naziv')
-    return render(request, 'index.html', {'kontinenti': kontinenti})
+    return render(request, 'homepage.html', {'kontinenti': kontinenti})
 
 
 
