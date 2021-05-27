@@ -1,0 +1,51 @@
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/login-bgg.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+
+.forma{
+    font-family: "Raleway", sans-serif;
+    background-color: lightgray;
+    opacity: 65%;
+    padding: 30px;
+    border: 1.5pt black solid;
+    box-shadow: #1d2124;
+    border-radius: 22px;
+    width: 25%;
+}
+
+.login-forma{
+
+     display: flex;
+     justify-content: flex-start;
+     flex-direction: column;
+     align-items: flex-start;
+}
+
+input{
+    width: 100%;
+}
+
+.forma label{
+    margin-top:17px;
+    margin-bottom:5px;
+}
+
+#login-submit{
+    font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 9px;
+  transition: 0.5s;
+  border: 2px solid #85b0be;
+    margin-top:30px;
+    width: 100%;
+    background: #85b0be;
+}

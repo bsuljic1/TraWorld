@@ -2,11 +2,19 @@
 
 {% block content %}
 
-    <h1>This is a signup page</h1>
-    <form class="site-form" action="{% url 'signup' %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Signup">
-    </form>
+    {% load static %}
+    <link href="{% static 'css/signup-style.css' %}" rel="stylesheet">
+    <section id="hero">
+        <div class="hero-container">
+            <div class="forma">
+                <h1>Registruj se</h1>
+                <form class="login-forma" action="{% url 'signup' %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input id="signup-submit" type="submit" value="Signup">
+                </form>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
