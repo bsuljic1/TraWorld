@@ -6,6 +6,15 @@
     position: relative;
 }
 
+#login a{
+    color: #85b0be;
+    text-decoration: none;
+}
+
+#home a{
+    color:white;
+}
+
 .forma {
     font-family: "Raleway", sans-serif;
     background-color: lightgray;

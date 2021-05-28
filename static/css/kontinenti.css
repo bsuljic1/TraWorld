@@ -1,26 +1,26 @@
-.kontinenti{
-    margin-top:20px;
+.kontinenti {
+    margin-top: 20px;
 }
 
-.kontinent{
-    width:60%;
+.kontinent {
+    width: 60%;
     display: block;
     align-content: center;
-    margin:10px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.kontinent button{
-    background:#85b0be;
+    margin: 10px auto 10px auto;
+    background: #85b0be;
     font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 1px;
     padding: 10px 28px;
     border-radius: 4px;
     transition: 0.5s;
     border: 2px solid #85b0be;
-    color: #fff;
-    width:100%;
+
+    text-align: center;
+}
+
+.kontinent a {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: white;
 }

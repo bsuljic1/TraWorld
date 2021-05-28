@@ -7,3 +7,12 @@
     align-items: flex-start;
 }
 
+#register{
+      color: #96bbc7;
+    text-decoration: none;
+}
+
+#login a{
+    color: white;
+}
+

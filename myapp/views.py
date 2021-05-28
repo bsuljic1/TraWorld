@@ -1,7 +1,8 @@
-from .models import Kontinent
+from .models import Kontinent, Drzava
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+
 
 def homepage(request):
     kontinenti = Kontinent.objects.all().order_by('naziv')
@@ -38,3 +39,8 @@ def logout_view(request):
     if request.method == 'POST':
         logout(request)
         return redirect('homepage')
+
+def drzave_view(request):
+    drzave = Drzava.objects.filter(kontinentId=1)
+    return render(request, 'drzave.html', {'drzave': drzave})
+

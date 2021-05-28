@@ -52,7 +52,7 @@
                     <div class="col-lg-6 pt-4 pt-lg-0 kontinenti">
                         {% for kontinent in kontinenti %}
                             <div class="kontinent">
-                                <button class="btn-kontinent">{{ kontinent.naziv }}</button>
+                                 <a href="{% url 'drzave' %}">{{ kontinent.naziv }}</a>
                             </div>
                         {% endfor %}
                     </div>
