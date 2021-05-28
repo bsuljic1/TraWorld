@@ -3,9 +3,12 @@
 }
 
 .kontinent{
-    display:inline-block;
-    align-content: flex-start;
-    margin-right:5px;
+    width:60%;
+    display: block;
+    align-content: center;
+    margin:10px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .kontinent button{
