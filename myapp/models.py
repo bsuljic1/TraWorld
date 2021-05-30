@@ -6,6 +6,7 @@ class Kontinent(models.Model):
 class Drzava(models.Model):
     naziv = models.CharField(max_length=30, unique=True)
     kontinentId = models.ForeignKey('Kontinent', on_delete=models.CASCADE)
+    slika = models.ImageField(upload_to='static/drzave', default='static/img/bosna.jpg')
 
 class Lokacija(models.Model):
     naziv = models.CharField(max_length=30, unique=True)

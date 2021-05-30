@@ -9,7 +9,7 @@
                 {% for drzava in drzave %}
                     <div class="drzava">
                         <div class="drzava-slika">
-                            <img src="assets/img/gallery/location1.png" alt="">
+                            <img src={{ drzava.slika.url }} alt="">
                         </div>
                         <div class="drzava-detalji">
                             <p>{{ drzava.naziv }}</p>
