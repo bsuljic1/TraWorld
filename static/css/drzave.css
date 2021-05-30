@@ -1,0 +1,104 @@
+
+.drzave-div .drzava {
+    position: relative
+}
+
+.drzave-div .drzava .drzava-slika {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0
+}
+
+.drzave-div .drzava .drzava-slika::before {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    content: "";
+    z-index: 1
+}
+
+.drzave-div .drzava .drzava-slika img {
+    width: 100%;
+    transform: scale(1);
+    transition: all .5s ease-out 0s
+}
+
+.drzave-div .drzava .drzava-detalji {
+    position: absolute;
+    left: 45px;
+    bottom: -9px;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s
+}
+
+.drzave-div .drzava .drzava-detalji p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700
+}
+
+.drzave-div .drzava .drzava-detalji .location-btn {
+    padding: 10px 20px;
+    background: #fff;
+    color: #ff3d1c;
+    border-radius: 30px;
+    opacity: 0;
+    visibility: hidden
+}
+
+.drzave-div .drzava .drzava-detalji .location-btn:hover {
+    background: #eb566c;
+    color: #fff
+}
+
+.drzave-div .drzava .drzava-detalji .location-btn i {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: -3px
+}
+
+
+.drzava:hover .drzava-slika img {
+    transform: scale(1.1)
+}
+
+.drzava:hover .drzava-detalji {
+    bottom: 36px
+}
+
+.drzava:hover .drzava-detalji .location-btn {
+    opacity: 1;
+    visibility: visible
+}
+
+.drzave-div .drzava .drzava-slika::before {
+    background-image: -moz-linear-gradient(90deg, #010a27 0%, #010a27 0%, rgba(6, 31, 120, 0.3) 70%, rgba(11, 52, 201, 0.01) 100%, #0b34c9 100%);
+    background-image: -webkit-linear-gradient(90deg, #010a27 0%, #010a27 0%, rgba(6, 31, 120, 0.3) 70%, rgba(11, 52, 201, 0.01) 100%, #0b34c9 100%);
+    background-image: -ms-linear-gradient(90deg, #010a27 0%, #010a27 0%, rgba(6, 31, 120, 0.3) 70%, rgba(11, 52, 201, 0.01) 100%, #0b34c9 100%)
+}
+.mb-30 {
+    margin-bottom: 30px
+}
+
+.drzave-div{
+    width: 90%;
+    align-content: center;
+    margin: 100px auto auto;
+    background:black;
+    position:relative;
+}
+
+.drzava{
+    display:inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 50px;
+}
+

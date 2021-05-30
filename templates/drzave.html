@@ -2,10 +2,29 @@
 
 {% block content %}
     {% load static %}
+    <link href="{% static 'css/drzave.css' %}" rel="stylesheet">
+    <section id="drzave">
+        <div class="drzave-div">
+            <div class="container">
+                {% for drzava in drzave %}
+                    <div class="drzava">
+                        <div class="drzava-slika">
+                            <img src="assets/img/gallery/location1.png" alt="">
+                        </div>
+                        <div class="drzava-detalji">
+                            <p>{{ drzava.naziv }}</p>
+                            <a href="#" class="location-btn">65 <i class="ti-plus"></i> Location</a>
+                        </div>
+                    </div>
+                {% endfor %}
 
-    <section id="hero">
-    <div class="hero-container">
-       
-    </div>
-</section>
+            </div>
+            <!-- More Btn -->
+            <div class="row justify-content-center">
+                <div class="room-btn pt-20">
+                    <a href="catagori.html" class="btn view-btn1">View All Places</a>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
