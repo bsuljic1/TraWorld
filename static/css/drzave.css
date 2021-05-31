@@ -30,6 +30,7 @@
     position: absolute;
     left: 45px;
     bottom: -9px;
+    right: 45px;
     -webkit-transition: all .4s ease-out 0s;
     -moz-transition: all .4s ease-out 0s;
     -ms-transition: all .4s ease-out 0s;

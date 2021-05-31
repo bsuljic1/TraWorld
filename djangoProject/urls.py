@@ -11,5 +11,6 @@ urlpatterns = [
     url('login/', views.login_view, name="login"),
     url('logout/', views.logout_view, name="logout"),
     path('<nazivKontinenta>/drzave/', views.drzave_view, name="drzave"),
+    path('<nazivDrzave>/lokacije/', views.lokacije_view, name="lokacije")
 ]
 

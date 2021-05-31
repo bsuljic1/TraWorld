@@ -1,4 +1,4 @@
-from .models import Kontinent, Drzava
+from .models import Kontinent, Drzava, Lokacija
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
@@ -46,3 +46,9 @@ def drzave_view(request, nazivKontinenta):
     drzave = Drzava.objects.filter(kontinentId=idKontinenta)
     return render(request, 'drzave.html', {'drzave': drzave})
 
+
+def lokacije_view(request, nazivDrzave):
+    drzava = Drzava.objects.get(naziv=nazivDrzave)
+    idDrzave = drzava.id
+    lokacije = Lokacija.objects.filter(drzavaId=idDrzave)
+    return render(request, 'lokacije.html', {'lokacije': lokacije})

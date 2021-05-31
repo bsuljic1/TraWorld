@@ -7,9 +7,11 @@ class Drzava(models.Model):
     naziv = models.CharField(max_length=30, unique=True)
     kontinentId = models.ForeignKey('Kontinent', on_delete=models.CASCADE)
     slika = models.ImageField(upload_to='static/drzave', default='static/img/bosna.jpg')
+    brojLokacija = models.IntegerField(default=0)
 
 class Lokacija(models.Model):
     naziv = models.CharField(max_length=30, unique=True)
+    grad = models.CharField(max_length=30, default="")
     opis = models.TextField()
     latitude = models.FloatField()
     longitude = models.FloatField()
