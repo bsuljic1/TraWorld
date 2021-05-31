@@ -10,6 +10,6 @@ urlpatterns = [
     url('signup/', views.signup_view, name="signup"),
     url('login/', views.login_view, name="login"),
     url('logout/', views.logout_view, name="logout"),
-    url('drzave/', views.drzave_view, name="drzave")
+    path('drzave/<nazivKontinenta>/', views.drzave_view, name="drzave"),
 ]
 

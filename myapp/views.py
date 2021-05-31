@@ -40,7 +40,9 @@ def logout_view(request):
         logout(request)
         return redirect('homepage')
 
-def drzave_view(request):
-    drzave = Drzava.objects.filter(kontinentId=1)
+def drzave_view(request, nazivKontinenta):
+    kontinent = Kontinent.objects.get(naziv=nazivKontinenta)
+    idKontinenta = kontinent.id
+    drzave = Drzava.objects.filter(kontinentId=idKontinenta)
     return render(request, 'drzave.html', {'drzave': drzave})
 
