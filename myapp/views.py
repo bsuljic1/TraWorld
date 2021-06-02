@@ -52,3 +52,9 @@ def lokacije_view(request, nazivDrzave):
     idDrzave = drzava.id
     lokacije = Lokacija.objects.filter(drzavaId=idDrzave)
     return render(request, 'lokacije.html', {'lokacije': lokacije})
+
+def lokacija_view(request, nazivLokacije):
+    lokacija = Lokacija.objects.get(naziv=nazivLokacije)
+    return render(request, 'lokacija.html', {'lokacija': lokacija})
+
+

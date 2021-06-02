@@ -9,11 +9,11 @@
                 {% for lokacija in lokacije %}
                     <div class="drzava">
                         <div class="drzava-slika">
-                            <img src="" alt="">
+                            <img src={{ lokacija.glavna_slika.url }} alt="">
                         </div>
                         <div class="drzava-detalji">
-                            <p>{{ lokacija.naziv }}</p>
-{#                            <a href="{% url 'lokacije' nazivDrzave=drzava.naziv %}" class="location-btn">{{ drzava.brojLokacija }}<i class="ti-plus"></i> Lokacija</a>#}
+                            <p>{{ lokacija.naziv }}, {{ lokacija.grad }}</p>
+                            <a href="{% url 'lokacija' nazivLokacije=lokacija.naziv %}" class="location-btn"><i class="ti-plus"></i>Više detalja</a>
                         </div>
                     </div>
                 {% endfor %}
