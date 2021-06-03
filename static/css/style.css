@@ -1,3 +1,5 @@
+
+
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
@@ -920,3 +922,163 @@ section {
 }
 
 
+
+.services-area{
+    background-image: url('../img/howitworks.jpg');
+    background-size:cover;
+    width:100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+}
+
+
+.services-area > .container{
+    align-items: center;
+    margin-top:200px;
+    position: relative;
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .services-area {
+        padding-top: 100px;
+        padding-bottom: 80px
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .services-area {
+        padding-top: 70px;
+        padding-bottom: 20px
+    }
+}
+
+@media (max-width: 575px) {
+    .services-area {
+        padding-top: 70px;
+        padding-bottom: 20px
+    }
+}
+
+.services-area .single-services .services-icon {
+    margin-bottom: 50px;
+    width: 67px;
+    height: 67px;
+    background: #fff;
+    line-height: 67px;
+    text-align: center;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative
+}
+
+.services-area .single-services .services-icon::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 90px;
+    height: 90px;
+    background: transparent;
+    border-radius: 50%;
+    transition: .5s;
+    border: 2px dashed #31ff7a;
+    box-sizing: border-box;
+    animation: animate 10s linear infinite
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1) rotate(0deg)
+    }
+    100% {
+        transform: scale(1) rotate(360deg)
+    }
+}
+
+.services-area .single-services .services-icon span {
+    color: #eb566c;
+    font-size: 38px;
+    padding-top: 3px;
+    display: block
+}
+
+.services-area .single-services .services-cap h5 > a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 21px;
+    display: block;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .services-area .single-services .services-cap h5 > a {
+        font-size: 29px
+    }
+}
+
+.services-area .single-services .services-cap p {
+    margin-bottom: 0px;
+    color: #bcbdca;
+    font-size: 16px
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .services-area .single-services .services-cap p {
+        font-size: 15px
+    }
+}
+
+.single-services {
+    position: relative
+}
+
+.single-services .shape1 {
+    position: absolute;
+    right: -61%;
+    top: 40px
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-services .shape1 {
+        right: -75%;
+        top: 40px
+    }
+}
+
+.single-services .shape2 {
+    position: absolute;
+    right: -61%;
+    top: 40px
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-services .shape2 {
+        right: -80%;
+        top: 40px
+    }
+}
+
+
+.services-area h1 {
+    margin: 0 0 15px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.services-area h2 {
+    color: #eee;
+    margin-bottom: 30px;
+    font-size: 24px;
+}

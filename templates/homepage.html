@@ -33,14 +33,15 @@
                 <div class="row content">
                     <div class="col-lg-6">
                         <h2>Odaberi kontinent koji želiš posjetiti</h2>
-                        <h3>Svaki od 7 kontinenata ima prekrasne lokacije za posjetiti. Te destinacije čekaju tebe da uživaš
+                        <h3>Svaki od 7 kontinenata ima prekrasne lokacije za posjetiti. Te destinacije čekaju tebe da
+                            uživaš
                             istraživajući ih.</h3>
                         <h3>Ne možeš pogriješiti u svom odabiru, ali mi smo tu da ti olakšamo pretragu!</h3>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 kontinenti">
                         {% for kontinent in kontinenti %}
                             <div class="kontinent">
-                                 <a href="{% url 'drzave' nazivKontinenta=kontinent.naziv %}">{{ kontinent.naziv }}</a>
+                                <a href="{% url 'drzave' nazivKontinenta=kontinent.naziv %}">{{ kontinent.naziv }}</a>
                             </div>
                         {% endfor %}
                     </div>
@@ -48,6 +49,59 @@
 
             </div>
         </section>
+
+
+        <div class="services-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Section Tittle -->
+                        <div class="section-title">
+                            <h1>Lahko za istraživati</h1>
+                            <h2>Kako sve funkcioniše?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-list"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">1. Choose a Category</a></h5>
+                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                            </div>
+                            <!-- Shpape -->
+                            <img class="shape1 d-none d-lg-block" src="{% static 'img/serices1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-problem"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">2. what you want</a></h5>
+                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                            </div>
+                            <img class="shape2 d-none d-lg-block" src="{% static 'img/serices2.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-respect"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">3. Go out & Explore</a></h5>
+                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services section-bg">
