@@ -9,16 +9,18 @@
     <section id="lokacija" class="lokacija" style="background-image: url({{ lokacija.glavna_slika.url }})">
         <div class="container" data-aos="fade-up">
             <div class="row">
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-lg-6 order-1 kont1" data-aos="zoom-in" data-aos-delay="100">
                     <div class="lokacija-img">
                         <img src={{ lokacija.glavna_slika.url }} alt="">
                     </div>
                     <div class="btn-location">
                         <a href="#gallery" class="btn-get-started scrollto">Galerija slika</a>
                         <a href="#map" class="btn-get-started scrollto">Vidi lokaciju</a>
+                        <a href="#map" class="btn-get-started scrollto">Ocijeni</a>
+                        <a href="#map" class="btn-get-started scrollto">Dodaj recenziju</a>
                     </div>
                 </div>
-                <div class="col-lg-6 order-2 content kont">
+                <div class="col-lg-6 order-2 content kont2">
                     <h1>{{ lokacija.naziv }}, {{ lokacija.grad }}</h1>
                     <p>
                         {{ lokacija.opis }}

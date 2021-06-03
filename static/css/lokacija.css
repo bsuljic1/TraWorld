@@ -21,6 +21,7 @@
     position: relative;
     transition: .5s;
     vertical-align: center;
+    width:100%;
 }
 
 .lokacija .lokacija-img img {
@@ -89,7 +90,7 @@
     margin-top: 80px;
 }
 
-.lokacija .kont p {
+.lokacija .kont2 p {
     width: 100%;
     height: 50vh;
     background: rgba(252, 252, 252, 0.95);
@@ -99,14 +100,21 @@
     border: 5px solid #85b0be;
 }
 
-.lokacija .btn-location {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+
+.kont1 {
+    position: relative;
 }
 
-.lokacija .btn-get-started {
-    margin-bottom: 0;
-    margin-left: 10px;
-    margin-right: 10px;
+.lokacija .kont1 .btn-location {
+    left: 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.lokacija .kont1 .btn-get-started {
+    width: 45%;
+    margin: 0px 10px 20px 10px;
 }
