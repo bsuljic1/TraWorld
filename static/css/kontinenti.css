@@ -1,6 +1,11 @@
 .kontinenti {
     margin-top: 20px;
 }
+#search-continents{
+    width:100%;
+    height: 100vh;
+    background: #fff;
+}
 
 .kontinent {
     width: 60%;
