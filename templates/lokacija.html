@@ -3,39 +3,35 @@
 {% block content %}
     {% load static %}
 
-    <section id="about" class="about" style="background-image: url({{ lokacija.glavna_slika.url }})">
-        <div class="container" data-aos="fade-up">
+    <link href="{% static 'css/lokacija.css' %}" rel="stylesheet">
+      <link href="{% static 'css/galerija.css' %}" rel="stylesheet">
 
+    <section id="lokacija" class="lokacija" style="background-image: url({{ lokacija.glavna_slika.url }})">
+        <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
-
-                    <h1>{{ lokacija.naziv }}, {{ lokacija.grad }}</h1>
-                    <div class="about-img">
+                    <div class="lokacija-img">
                         <img src={{ lokacija.glavna_slika.url }} alt="">
                     </div>
-
-                </div>
-                <div class="col-lg-6 order-2 content kont">
-                    <p>
-                        {{ lokacija.opis }}
-                    </p>
                     <div class="btn-location">
                         <a href="#gallery" class="btn-get-started scrollto">Galerija slika</a>
                         <a href="#map" class="btn-get-started scrollto">Vidi lokaciju</a>
                     </div>
                 </div>
+                <div class="col-lg-6 order-2 content kont">
+                    <h1>{{ lokacija.naziv }}, {{ lokacija.grad }}</h1>
+                    <p>
+                        {{ lokacija.opis }}
+                    </p>
+                </div>
             </div>
 
         </div>
-    </section><!-- End About Section -->
+    </section>
 
     <section id="gallery" class="gallery">
-
-
         <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
             <div class="row g-0">
-
                 <div class="col-lg-3 col-md-4">
                     <div class="gallery-item">
                         <a href="{{ lokacija.slika1.url }}" class="gallery-lightbox" data-gall="gallery-item">
@@ -103,7 +99,7 @@
             </div>
 
         </div>
-    </section><!-- End Gallery Section -->
+    </section>
 
     <section id="map" class="map">
         <iframe style="border:0; width: 100%; height: 350px;"

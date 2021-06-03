@@ -4,6 +4,11 @@
 }
 
 
+.btn-search {
+    margin-top: 40px;
+}
+
+
 .search form.search-box {
     border: 8px solid rgba(255, 255, 255, 0.2);
     display: flex;

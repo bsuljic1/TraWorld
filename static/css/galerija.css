@@ -1,0 +1,38 @@
+.gallery {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery .col-lg-3 {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery .col-md-4 {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery .gallery-item {
+    overflow: hidden;
+    border-right: 3px solid #85b0be;
+    border-bottom: 3px solid #85b0be;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery .gallery-item img {
+    transition: all ease-in-out 0.4s;
+    display: block;
+    width: 100vw;
+    height: 40vh;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+}
+
+
+.gallery .gallery-item:hover img {
+    transform: scale(1.1);
+}

@@ -417,9 +417,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.btn-search {
-    margin-top: 40px;
-}
 
 /*--------------------------------------------------------------
 # Sections General
@@ -449,27 +446,6 @@ section {
 .section-title p {
     margin-bottom: 0;
 }
-
-/*--------------------------------------------------------------
-# search-continents
---------------------------------------------------------------*/
-.search-continents .content h2 {
-    margin-top: 20px;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 60px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    color: #052c3f;
-}
-
-.search-continents .content h3 {
-    font-weight: 500;
-    line-height: 32px;
-    font-size: 24px;
-    color: #4d8090;
-}
-
 
 /*--------------------------------------------------------------
 # Services
@@ -762,159 +738,6 @@ section {
 }
 
 
-.about {
-    position: relative;
-    padding: 80px 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-}
-
-.about:before {
-    content: "";
-    background: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-
-.about .about-img {
-    position: relative;
-    transition: .5s;
-    vertical-align: center;
-}
-
-.about .about-img img {
-    max-width: 100%;
-    border: 4px solid #85b0be;
-    position: relative;
-    vertical-align: center;
-}
-
-.about .about-img::before {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    width: 60px;
-    height: 60px;
-    z-index: 1;
-    content: '';
-    border-left: 5px solid #85b0be;
-    border-top: 5px solid #85b0be;
-    transition: .5s;
-}
-
-.about .about-img::after {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 60px;
-    height: 60px;
-    z-index: 2;
-    content: '';
-    border-right: 5px solid #85b0be;
-    border-bottom: 5px solid #85b0be;
-    transition: .5s;
-}
-
-.about .about-img:hover {
-    transform: scale(1.03);
-}
-
-.about .about-img:hover::before {
-    left: 10px;
-    top: 10px;
-}
-
-.about .about-img:hover::after {
-    right: 10px;
-    bottom: 10px;
-}
-
-.about h1 {
-    margin: 0 0 15px 0;
-    font-size: 48px;
-    line-height: 56px;
-    text-transform: uppercase;
-    color: #85b0be;
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-}
-
-
-.about .content p:last-child {
-    margin-bottom: 0;
-}
-
-.about .container {
-    margin-top: 80px;
-}
-
-.about .kont p {
-    width: 100%;
-    height: 50vh;
-    background: rgba(252, 252, 252, 0.95);
-    padding: 25px 25px 25px 25px;
-    opacity: 80%;
-    font-family: "Raleway", sans-serif;
-    border: 5px solid #85b0be;
-}
-
-.about .kont .btn-location {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.about .kont .btn-get-started {
-    margin-bottom: 0;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-
-.gallery {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.gallery .col-lg-3 {
-    margin: 0;
-    padding: 0;
-}
-
-.gallery .col-md-4 {
-    margin: 0;
-    padding: 0;
-}
-
-.gallery .gallery-item {
-    overflow: hidden;
-    border-right: 3px solid #85b0be;
-    border-bottom: 3px solid #85b0be;
-    margin: 0;
-    padding: 0;
-}
-
-.gallery .gallery-item img {
-    transition: all ease-in-out 0.4s;
-    display: block;
-    width: 100vw;
-    height: 40vh;
-    object-fit: cover;
-    padding: 0;
-    margin: 0;
-}
-
-
-.gallery .gallery-item:hover img {
-    transform: scale(1.1);
-}
 
 #map {
     margin: 0;
@@ -926,7 +749,7 @@ section {
 }
 
 
-.services-area {
+.howitworks {
     background-image: url('../img/howitworks.jpg');
     background-size: cover;
     width: 100%;
@@ -937,7 +760,7 @@ section {
 }
 
 
-.services-area > .container {
+.howitworks > .container {
     align-items: center;
     margin-top: 200px;
     position: relative;
@@ -945,27 +768,27 @@ section {
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .services-area {
+    .howitworks {
         padding-top: 100px;
         padding-bottom: 80px
     }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .services-area {
+    .howitworks {
         padding-top: 70px;
         padding-bottom: 20px
     }
 }
 
 @media (max-width: 575px) {
-    .services-area {
+    .howitworks {
         padding-top: 70px;
         padding-bottom: 20px
     }
 }
 
-.services-area .single-services .services-icon {
+.howitworks .single-services .services-icon {
     margin-bottom: 50px;
     width: 67px;
     height: 67px;
@@ -977,7 +800,7 @@ section {
     position: relative
 }
 
-.services-area .single-services .services-icon::before {
+.howitworks .single-services .services-icon::before {
     content: "";
     position: absolute;
     top: -12px;
@@ -1001,14 +824,14 @@ section {
     }
 }
 
-.services-area .single-services .services-icon span {
+.howitworks .single-services .services-icon span {
     color: #eb566c;
     font-size: 38px;
     padding-top: 3px;
     display: block
 }
 
-.services-area .single-services .services-cap h5 > a {
+.howitworks .single-services .services-cap h5 > a {
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -1022,19 +845,19 @@ section {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .services-area .single-services .services-cap h5 > a {
+    .howitworks .single-services .services-cap h5 > a {
         font-size: 29px
     }
 }
 
-.services-area .single-services .services-cap p {
+.howitworks .single-services .services-cap p {
     margin-bottom: 0px;
     color: #bcbdca;
     font-size: 16px
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .services-area .single-services .services-cap p {
+    .howitworks .single-services .services-cap p {
         font-size: 15px
     }
 }
@@ -1070,7 +893,7 @@ section {
 }
 
 
-.services-area h1 {
+.howitworks h1 {
     margin: 0 0 15px 0;
     font-size: 48px;
     font-weight: 700;
@@ -1079,7 +902,7 @@ section {
     color: #fff;
 }
 
-.services-area h2 {
+.howitworks h2 {
     color: #eee;
     margin-bottom: 30px;
     font-size: 24px;

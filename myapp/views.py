@@ -36,9 +36,8 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 
-@login_required(login_url="/login/")
 def logout_view(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
         logout(request)
         return redirect('homepage')
 
