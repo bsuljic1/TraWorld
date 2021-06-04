@@ -4,7 +4,11 @@
     {% load static %}
 
     <link href="{% static 'css/lokacija.css' %}" rel="stylesheet">
-      <link href="{% static 'css/galerija.css' %}" rel="stylesheet">
+    <link href="{% static 'css/galerija.css' %}" rel="stylesheet">
+    <link href="{% static 'css/rating.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <section id="lokacija" class="lokacija" style="background-image: url({{ lokacija.glavna_slika.url }})">
         <div class="container" data-aos="fade-up">
@@ -19,9 +23,27 @@
                         <a href="#map" class="btn-get-started scrollto">Ocijeni</a>
                         <a href="#map" class="btn-get-started scrollto">Dodaj recenziju</a>
                     </div>
+
                 </div>
                 <div class="col-lg-6 order-2 content kont2">
-                    <h1>{{ lokacija.naziv }}, {{ lokacija.grad }}</h1>
+                    <div class="naslov-i-ocjena">
+                        <div class="naslov">
+                            <h1>{{ lokacija.naziv }}, {{ lokacija.grad }}</h1>
+                        </div>
+                        <div class="ocjena">
+                            <div class="content text-center">
+                                <div class="ratings"><span class="product-rating">{{ ocjena }}</span><span>/5</span>
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="rating-text"><span>46 ratings & 15 reviews</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <p>
                         {{ lokacija.opis }}
                     </p>
@@ -108,5 +130,6 @@
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
                 frameborder="0" allowfullscreen></iframe>
     </section>
+
 
 {% endblock %}

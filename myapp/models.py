@@ -31,7 +31,6 @@ class Lokacija(models.Model):
     slika8 = models.ImageField(upload_to='static/lokacije', default='static/img/travel.jpg')
     drzavaId = models.ForeignKey('Drzava', on_delete=models.CASCADE)
 
-
 class Ocjena(models.Model):
     vrijednost = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     korisnik = models.ForeignKey(User, on_delete=models.CASCADE, default=None)

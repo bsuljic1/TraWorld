@@ -1,0 +1,21 @@
+body {
+     margin: 0;
+     padding: 0;
+     font-family: "Raleway", sans-serif;
+    color:#eee
+ }
+
+
+ .ratings {
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     box-shadow: #E0E0E0 0px 3px 8px;
+ }
+
+ .product-rating {
+     font-size: 50px
+ }
+
+ .stars i {
+     font-size: 18px;
+     color: gold;
+ }

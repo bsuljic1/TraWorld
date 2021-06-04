@@ -1,4 +1,4 @@
-from .models import Kontinent, Drzava, Lokacija
+from .models import Kontinent, Drzava, Lokacija, Ocjena, Recenzija
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
@@ -61,4 +61,13 @@ def lokacije_view(request, nazivDrzave):
 @login_required(login_url="/login/")
 def lokacija_view(request, nazivLokacije):
     lokacija = Lokacija.objects.get(naziv=nazivLokacije)
-    return render(request, 'lokacija.html', {'lokacija': lokacija})
+
+    ocjene = Ocjena.objects.filter(lokacijaId=lokacija.id)
+    ocjena = 0
+    for o in ocjene:
+        ocjena = ocjena + o.vrijednost
+    ocjena = ocjena / (ocjene.all().__len__())
+
+    recenzije = Recenzija.objects.filter(lokacijaId=lokacija.id)
+
+    return render(request, 'lokacija.html', {'lokacija': lokacija, 'ocjena': ocjena, 'recenzije': recenzije})

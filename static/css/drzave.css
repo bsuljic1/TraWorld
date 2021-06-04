@@ -20,7 +20,7 @@
 }
 
 .drzave-div .drzava .drzava-slika img {
-    width: 350px;
+    width: 380px;
     height:300px;
     transform: scale(1);
     transition: all .5s ease-out 0s
@@ -97,9 +97,9 @@
 
 .drzava{
     display:inline-block;
-    width: 350px;
+    width: 380px;
     height: 300px;
-    margin: 30px;
+    margin: 20px;
 }
 
 #drzave{

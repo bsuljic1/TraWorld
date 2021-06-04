@@ -71,6 +71,21 @@
     bottom: 10px;
 }
 
+.lokacija .naslov-i-ocjena{
+    display: flex;
+    margin-bottom:10px;
+}
+
+.naslov{
+    float:left;
+    text-align: center;
+    vertical-align: center;
+}
+
+.ocjena{
+    float: left;
+    width: 40%;
+}
 .lokacija h1 {
     margin: 0 0 15px 0;
     font-size: 48px;
