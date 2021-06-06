@@ -63,11 +63,21 @@ def lokacija_view(request, nazivLokacije):
     lokacija = Lokacija.objects.get(naziv=nazivLokacije)
 
     ocjene = Ocjena.objects.filter(lokacijaId=lokacija.id)
+    brojOcjena = ocjene.all().__len__()
+
     ocjena = 0
     for o in ocjene:
         ocjena = ocjena + o.vrijednost
-    ocjena = ocjena / (ocjene.all().__len__())
+    ocjena = ocjena / (brojOcjena)
+
+    ocjena5 = ocjene.filter(vrijednost=5).all().__len__()
+    ocjena4 = ocjene.filter(vrijednost=4).all().__len__()
+    ocjena3 = ocjene.filter(vrijednost=3).all().__len__()
+    ocjena2 = ocjene.filter(vrijednost=2).all().__len__()
+    ocjena1 = ocjene.filter(vrijednost=1).all().__len__()
 
     recenzije = Recenzija.objects.filter(lokacijaId=lokacija.id)
 
-    return render(request, 'lokacija.html', {'lokacija': lokacija, 'ocjena': ocjena, 'recenzije': recenzije})
+    return render(request, 'lokacija.html', {'lokacija': lokacija, 'ocjena': ocjena, 'brojOcjena': brojOcjena,
+                                             'recenzije': recenzije, 'ocjena5': ocjena5, 'ocjena4': ocjena4,
+                                             'ocjena3': ocjena3, 'ocjena2': ocjena2, 'ocjena1': ocjena1})

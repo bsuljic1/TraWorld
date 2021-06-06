@@ -82,10 +82,18 @@
     vertical-align: center;
 }
 
-.ocjena{
+
+
+.kont2 a {
     float: left;
     width: 40%;
+    transition: 0.5s;
 }
+
+.ocjena{
+    width: 100%;
+}
+
 .lokacija h1 {
     margin: 0 0 15px 0;
     font-size: 48px;
@@ -133,3 +141,4 @@
     width: 45%;
     margin: 0px 10px 20px 10px;
 }
+

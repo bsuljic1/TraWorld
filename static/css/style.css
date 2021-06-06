@@ -33,7 +33,6 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
 }
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -762,7 +761,7 @@ section {
 
 .howitworks > .container {
     align-items: center;
-    margin-top: 200px;
+    margin-top: 100px;
     position: relative;
 }
 
