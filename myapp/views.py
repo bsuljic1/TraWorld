@@ -1,4 +1,4 @@
-from .models import Kontinent, Drzava, Lokacija, Ocjena, Recenzija
+from .models import Kontinent, Drzava, Lokacija, Recenzija
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
@@ -57,27 +57,40 @@ def lokacije_view(request, nazivDrzave):
     lokacije = Lokacija.objects.filter(drzavaId=idDrzave)
     return render(request, 'lokacije.html', {'lokacije': lokacije})
 
-
 @login_required(login_url="/login/")
 def lokacija_view(request, nazivLokacije):
     lokacija = Lokacija.objects.get(naziv=nazivLokacije)
 
-    ocjene = Ocjena.objects.filter(lokacijaId=lokacija.id)
+    ocjene = Recenzija.objects.filter(lokacijaId=lokacija.id)
     brojOcjena = ocjene.all().__len__()
 
     ocjena = 0
     for o in ocjene:
-        ocjena = ocjena + o.vrijednost
+        ocjena = ocjena + o.ocjena
     ocjena = ocjena / (brojOcjena)
 
-    ocjena5 = ocjene.filter(vrijednost=5).all().__len__()
-    ocjena4 = ocjene.filter(vrijednost=4).all().__len__()
-    ocjena3 = ocjene.filter(vrijednost=3).all().__len__()
-    ocjena2 = ocjene.filter(vrijednost=2).all().__len__()
-    ocjena1 = ocjene.filter(vrijednost=1).all().__len__()
-
-    recenzije = Recenzija.objects.filter(lokacijaId=lokacija.id)
+    ocjena5 = ocjene.filter(ocjena=5).all().__len__()
+    ocjena4 = ocjene.filter(ocjena=4).all().__len__()
+    ocjena3 = ocjene.filter(ocjena=3).all().__len__()
+    ocjena2 = ocjene.filter(ocjena=2).all().__len__()
+    ocjena1 = ocjene.filter(ocjena=1).all().__len__()
 
     return render(request, 'lokacija.html', {'lokacija': lokacija, 'ocjena': ocjena, 'brojOcjena': brojOcjena,
-                                             'recenzije': recenzije, 'ocjena5': ocjena5, 'ocjena4': ocjena4,
+                                             'recenzije': ocjene, 'ocjena5': ocjena5, 'ocjena4': ocjena4,
                                              'ocjena3': ocjena3, 'ocjena2': ocjena2, 'ocjena1': ocjena1})
+
+
+# def create_review(request):
+#     if request.method == 'POST':
+#         if request.POST.get('title') and request.POST.get('content'):
+#             recenzija = Recenzija()
+#             recenzija.tekst = request.POST.get('review')
+#             recenzija.korisnik = request.user
+#             recenzija.lokacijaId = request.
+#             recenzija.save()
+#             return render(request, 'posts/create.html')
+#
+#         else:
+#             return render(request, 'posts/create.html')
+#
+#     return render(request, 'signup.html', {'form': form})

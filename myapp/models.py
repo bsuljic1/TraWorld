@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+import datetime
 
 
 class Kontinent(models.Model):
@@ -31,13 +32,9 @@ class Lokacija(models.Model):
     slika8 = models.ImageField(upload_to='static/lokacije', default='static/img/travel.jpg')
     drzavaId = models.ForeignKey('Drzava', on_delete=models.CASCADE)
 
-class Ocjena(models.Model):
-    vrijednost = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-    korisnik = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    lokacijaId = models.ForeignKey('Lokacija', on_delete=models.CASCADE)
-
-
 class Recenzija(models.Model):
     tekst = models.TextField()
+    ocjena = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     korisnik = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     lokacijaId = models.ForeignKey('Lokacija', on_delete=models.CASCADE)
+    datum = models.DateField(auto_now=True)
