@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage
 
 
 def homepage(request):
@@ -75,8 +76,18 @@ def lokacija_view(request, nazivLokacije):
     ocjena2 = ocjene.filter(ocjena=2).all().__len__()
     ocjena1 = ocjene.filter(ocjena=1).all().__len__()
 
+    recenzije1 = ocjene.all()
+    p = Paginator(recenzije1, 3)
+    page_num = request.GET.get('page', 1)
+
+    try:
+        page = p.page(page_num)
+    except EmptyPage:
+        page = p.page(1)
+
+
     return render(request, 'lokacija.html', {'lokacija': lokacija, 'ocjena': ocjena, 'brojOcjena': brojOcjena,
-                                             'recenzije': ocjene, 'ocjena5': ocjena5, 'ocjena4': ocjena4,
+                                             'recenzije': page, 'ocjena5': ocjena5, 'ocjena4': ocjena4,
                                              'ocjena3': ocjena3, 'ocjena2': ocjena2, 'ocjena1': ocjena1})
 
 

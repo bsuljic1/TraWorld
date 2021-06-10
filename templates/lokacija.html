@@ -310,6 +310,96 @@
         </div>
     </section>
 
+    <section id="reviews" class="reviews">
+    <div class="naslov">
+        <h2>Još uvijek nisi siguran za ovu lokaciju?</h2>
+        <h1>Pročitaj recenzije korisnika!</h1>
+</div>
+        <div class="recenzije">
+            {% if recenzije.has_previous %}
+                <a class="lijevo"
+                   href="{% url 'lokacija' nazivLokacije=lokacija.naziv %}?page={{ recenzije.previous_page_number }} #reviews"
+                   role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            {% endif %}
+            {% for recenzija in recenzije %}
+                <div class="recenzija">
+                    <div class="card">
+                        <div class="row d-flex">
+                            <div class=""><img class="profile-pic" src="https://i.imgur.com/V3ICjlm.jpg"></div>
+                            <div class="d-flex flex-column">
+                                <h3 class="mt-2 mb-0">{{ recenzija.korisnik.username }}</h3>
+                                <div>
+                                    <p class="text-left">
+                                        <span class="text-muted">{{ recenzija.ocjena }}.0</span>
+                                        {% if recenzija.ocjena == 1 %}
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                        {% elif recenzija.ocjenana == 2 %}
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                        {% elif recenzija.ocjena == 3 %}
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                        {% elif recenzija.ocjena == 4 %}
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-inactive"></span>
+                                        {% else %}
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                            <span class="fa fa-star star-active"></span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-left tekst">
+                            <p class="content">{{ recenzija.tekst }}</p>
+                        </div>
+                        <div class="dolje">
+                            <div class="likes">
+                                <div class="like mr-3 vote">
+                                    <img src="https://i.imgur.com/mHSQOaX.png">
+                                    <span class="blue-text pl-2">20</span>
+                                </div>
+                                <div class="unlike vote">
+                                    <img src="https://i.imgur.com/bFBO3J7.png">
+                                    <span class="text-muted pl-2">4</span>
+                                </div>
+                            </div>
+                            <div class="datum">
+                                <p class="text-muted pt-5 pt-sm-1 datum">{{ recenzija.datum }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% if recenzije.has_next %}
+                <a class="desno"
+                   href="{% url 'lokacija' nazivLokacije=lokacija.naziv %}?page={{ recenzije.next_page_number }} #reviews"
+                   role="button" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {% endif %}
+        </div>
+    </section>
+
+
     <section id="map" class="map">
         <iframe style="border:0; width: 100%; height: 350px;"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
