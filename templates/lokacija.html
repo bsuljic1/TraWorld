@@ -1,4 +1,4 @@
-{% extends 'base_layout.html' %}
+{% extends 'header2.html' %}
 
 {% block content %}
     {% load static %}
@@ -15,7 +15,17 @@
 
 
     <section id="lokacija" class="lokacija" style="background-image: url({{ lokacija.glavna_slika.url }})">
+
         <div class="container" data-aos="fade-up">
+
+            <div class="bread-crumbs">
+                <a href="{% url 'drzave' nazivKontinenta=kontinent %}">{{ kontinent }}</a>
+                <i class="fa fa-caret-right bread"></i>
+                <a href="{% url 'lokacije' nazivDrzave=drzava %}">{{ drzava }}</a>
+                <i class="fa fa-caret-right bread"></i>
+                <a href="">{{ lokacija.naziv }}</a>
+            </div>
+
             <div class="row">
                 <div class="col-lg-6 order-1 kont1" data-aos="zoom-in" data-aos-delay="100">
                     <div class="lokacija-img">
@@ -147,7 +157,7 @@
                             <div class="row justify-content-left">
                                 <div class="col-md-4 lijevo">
                                     <div class="rating-box">
-                                        <h1>{{ ocjena|floatformat:2  }}/5</h1>
+                                        <h1>{{ ocjena|floatformat:2 }}/5</h1>
                                         <div class="rating-text">
                                             {% if brojOcjena|get_digit:1 == 2 or brojOcjena|get_digit:1 == 3 or brojOcjena|get_digit:1 == 4 %}
                                                 <span>{{ brojOcjena }} ocjene</span>
@@ -286,7 +296,7 @@
                     <div class="card-body text-center">
                         <div class="comment-box text-center">
                             <h4>Ocijeni i ti</h4>
-                            <form action="{% url 'lokacija' nazivLokacije=lokacija.naziv %}"  method="POST">
+                            <form action="{% url 'lokacija' nazivLokacije=lokacija.naziv %}" method="POST">
                                 {% csrf_token %}
                                 <div class="rating"><input type="radio" name="rating" value="5" id="5"><label
                                         for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
@@ -311,10 +321,10 @@
     </section>
 
     <section id="reviews" class="reviews">
-    <div class="naslov">
-        <h2>Još uvijek nisi siguran za ovu lokaciju?</h2>
-        <h1>Pročitaj recenzije korisnika!</h1>
-</div>
+        <div class="naslov">
+            <h2>Još uvijek nisi siguran za ovu lokaciju?</h2>
+            <h1>Pročitaj recenzije korisnika!</h1>
+        </div>
         <div class="recenzije">
             {% if recenzije.has_previous %}
                 <a class="lijevo"
@@ -327,7 +337,7 @@
                 <div class="recenzija">
                     <div class="card">
                         <div class="row d-flex">
-                            <div class=""><img class="profile-pic" src="https://i.imgur.com/V3ICjlm.jpg"></div>
+                            <div class="profile=pic"><i class="fa fa-user-circle" id="pic"></i></div>
                             <div class="d-flex flex-column">
                                 <h3 class="mt-2 mb-0">{{ recenzija.korisnik.username }}</h3>
                                 <div>

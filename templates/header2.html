@@ -1,0 +1,35 @@
+{% extends 'base_layout.html' %}
+{% block header %}
+    {% load static %}
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+
+            <div class="logo mr-auto">
+                <h1 class="text-light"><a href=""><span>TraWorld</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href=""><img src="{% static 'img/TraWorld.png' %}" alt="" class="img-fluid"></a> -->
+            </div>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active" id="home"><a href="{% url 'homepage' %}">Početna</a></li>
+                    <li><a href="#gallery">Galerija</a></li>
+                    <li><a href="#reviews">Recenzije</a></li>
+                    <li><a href="#rating">Dodaj recenziju</a></li>
+                    <li><a href="#contact">Kontakti</a></li>
+                    {% if user.is_authenticated %}
+                        <li id="logout"><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li id="login"><a href="{% url 'login' %}">Prijavi se</a></li>
+                        <li id="register"><a href="{% url 'signup' %}">Registruj se</a></li>
+                    {% endif %}
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+    {% block content %}
+    {% endblock %}
+
+{% endblock %}

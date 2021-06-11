@@ -174,10 +174,13 @@ td {
     margin-right: 30px
 }
 
-.pic {
+#pic {
     width: 80px;
     height: 80px;
-    margin-right: 10px
+    margin:10px 10px 0px 0px;
+    color:#FBC02D;
+    font-size: 4em;
+    text-align: center;
 }
 
 .vote {

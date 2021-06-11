@@ -55,7 +55,8 @@ def lokacije_view(request, nazivDrzave):
     drzava = Drzava.objects.get(naziv=nazivDrzave)
     idDrzave = drzava.id
     lokacije = Lokacija.objects.filter(drzavaId=idDrzave)
-    return render(request, 'lokacije.html', {'lokacije': lokacije})
+    kontinent = drzava.kontinentId
+    return render(request, 'lokacije.html', {'lokacije': lokacije, 'drzava':drzava.naziv, 'kontinent':kontinent.naziv})
 
 @login_required(login_url="/login/")
 def lokacija_view(request, nazivLokacije):
@@ -98,12 +99,15 @@ def lokacija_view(request, nazivLokacije):
     except EmptyPage:
         page = p.page(1)
 
+    drzava = lokacija.drzavaId
+    kontinent = drzava.kontinentId
 
     return render(request, 'lokacija.html', {'lokacija': lokacija, 'ocjena': ocjena, 'brojOcjena': brojOcjena,
                                              'recenzije': page, 'ocjena5': ocjena5, 'ocjena4': ocjena4,
                                              'ocjena3': ocjena3, 'ocjena2': ocjena2, 'ocjena1': ocjena1,
                                              'ocjena5_bar': ocjena5_bar, 'ocjena4_bar': ocjena4_bar, 'ocjena3_bar': ocjena3_bar,
-                                             'ocjena2_bar': ocjena2_bar, 'ocjena1_bar': ocjena1_bar})
+                                             'ocjena2_bar': ocjena2_bar, 'ocjena1_bar': ocjena1_bar,
+                                             'drzava':drzava.naziv, 'kontinent':kontinent.naziv})
 
 
 # def create_review(request):

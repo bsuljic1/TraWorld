@@ -94,12 +94,20 @@
     display: flex;
 }
 
-.recenzije i{
+.desno i{
     font-size: 3em;
     color:white;
     vertical-align: middle;
     margin-top:250px;
 }
+
+.lijevo i{
+    font-size: 3em;
+    color:white;
+    vertical-align: middle;
+    margin-top:250px;
+}
+
 
 #reviews .naslov{
     width: 100%;

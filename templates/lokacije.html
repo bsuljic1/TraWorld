@@ -1,11 +1,17 @@
-{% extends 'base_layout.html' %}
+{% extends 'header1.html' %}
 
 {% block content %}
     {% load static %}
     <link href="{% static 'css/drzave.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <section id="drzave">
         <div class="drzave-div">
             <div class="cont">
+            <div class="bread-crumbs">
+                <a href="{% url 'drzave' nazivKontinenta=kontinent %}">{{ kontinent }}</a>
+                <i class="fa fa-caret-right bread"></i>
+                <a href="{% url 'lokacije' nazivDrzave=drzava %}">{{ drzava }}</a>
+            </div>
                 {% for lokacija in lokacije %}
                     <div class="drzava">
                         <div class="drzava-slika">

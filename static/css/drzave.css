@@ -1,3 +1,19 @@
+.bread-crumbs{
+    margin-left:25px;
+    margin-bottom:0px;
+}
+
+.bread-crumbs a:hover {
+    color:#3b626f;
+}
+
+.bread-crumbs a{
+    color: #96bbc7;
+}
+
+.bread-crumbs .bread{
+    color: #96bbc7;
+}
 
 .drzave-div .drzava {
     position: relative

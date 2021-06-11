@@ -33,53 +33,8 @@
 <body>
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center header-transparent">
-    <div class="container d-flex align-items-center">
 
-        <div class="logo mr-auto">
-            <h1 class="text-light"><a href=""><span>TraWorld</span></a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href=""><img src="{% static 'img/TraWorld.png' %}" alt="" class="img-fluid"></a> -->
-        </div>
-
-        <nav class="nav-menu d-none d-lg-block">
-            <ul>
-                <li class="active" id="home"><a href="{% url 'homepage' %}">Početna</a></li>
-                <li><a href="#search-continents">Pretraga</a></li>
-                <li><a href="#howitworks">Kako funkcioniše?</a></li>
-                <li><a href="#services">Usluge</a></li>
-                {#                <li class="drop-down"><a href="">Drop Down</a>#}
-                {#                    <ul>#}
-                {#                        <li><a href="#">Drop Down 1</a></li>#}
-                {#                        <li class="drop-down"><a href="#">Drop Down 2</a>#}
-                {#                            <ul>#}
-                {#                                <li><a href="#">Deep Drop Down 1</a></li>#}
-                {#                                <li><a href="#">Deep Drop Down 2</a></li>#}
-                {#                                <li><a href="#">Deep Drop Down 3</a></li>#}
-                {#                                <li><a href="#">Deep Drop Down 4</a></li>#}
-                {#                                <li><a href="#">Deep Drop Down 5</a></li>#}
-                {#                            </ul>#}
-                {#                        </li>#}
-                {#                        <li><a href="#">Drop Down 3</a></li>#}
-                {#                        <li><a href="#">Drop Down 4</a></li>#}
-                {#                        <li><a href="#">Drop Down 5</a></li>#}
-                {#                    </ul>#}
-                {#                </li>#}
-                <li><a href="#contact">Kontakti</a></li>
-                {% if user.is_authenticated %}
-                    <li id="logout"><a href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                    <li id="login"><a href="{% url 'login' %}">Prijavi se</a></li>
-                    <li id="register"><a href="{% url 'signup' %}">Registruj se</a></li>
-                {% endif %}
-            </ul>
-        </nav><!-- .nav-menu -->
-
-    </div>
-</header><!-- End Header -->
-
-
-{% block content %}
+{% block header %}
 {% endblock %}
 
 
