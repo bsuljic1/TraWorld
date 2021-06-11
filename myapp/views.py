@@ -5,7 +5,6 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage
 
-
 def homepage(request):
     kontinenti = Kontinent.objects.all().order_by('naziv')
     return render(request, 'homepage.html', {'kontinenti': kontinenti})
@@ -61,6 +60,14 @@ def lokacije_view(request, nazivDrzave):
 @login_required(login_url="/login/")
 def lokacija_view(request, nazivLokacije):
     lokacija = Lokacija.objects.get(naziv=nazivLokacije)
+    if request.method == 'POST':
+            recenzija = Recenzija()
+            recenzija.tekst = request.POST.get('review')
+            recenzija.ocjena = request.POST.get('rating')
+            recenzija.korisnik = request.user
+            recenzija.lokacijaId = lokacija
+            recenzija.save()
+            return redirect('lokacija', nazivLokacije=nazivLokacije)
 
     ocjene = Recenzija.objects.filter(lokacijaId=lokacija.id)
     brojOcjena = ocjene.all().__len__()
@@ -76,6 +83,12 @@ def lokacija_view(request, nazivLokacije):
     ocjena2 = ocjene.filter(ocjena=2).all().__len__()
     ocjena1 = ocjene.filter(ocjena=1).all().__len__()
 
+    ocjena5_bar = (ocjena5 / brojOcjena) * 100
+    ocjena4_bar = (ocjena4 / brojOcjena) * 100
+    ocjena3_bar = (ocjena3 / brojOcjena) * 100
+    ocjena2_bar = (ocjena2 / brojOcjena) * 100
+    ocjena1_bar = (ocjena1 / brojOcjena) * 100
+
     recenzije1 = ocjene.all()
     p = Paginator(recenzije1, 3)
     page_num = request.GET.get('page', 1)
@@ -88,7 +101,9 @@ def lokacija_view(request, nazivLokacije):
 
     return render(request, 'lokacija.html', {'lokacija': lokacija, 'ocjena': ocjena, 'brojOcjena': brojOcjena,
                                              'recenzije': page, 'ocjena5': ocjena5, 'ocjena4': ocjena4,
-                                             'ocjena3': ocjena3, 'ocjena2': ocjena2, 'ocjena1': ocjena1})
+                                             'ocjena3': ocjena3, 'ocjena2': ocjena2, 'ocjena1': ocjena1,
+                                             'ocjena5_bar': ocjena5_bar, 'ocjena4_bar': ocjena4_bar, 'ocjena3_bar': ocjena3_bar,
+                                             'ocjena2_bar': ocjena2_bar, 'ocjena1_bar': ocjena1_bar})
 
 
 # def create_review(request):

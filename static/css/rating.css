@@ -39,7 +39,7 @@ body {
     overflow-x: hidden
 }
 
-a {
+#rating a {
     text-decoration: none !important;
     color: inherit
 }
@@ -194,7 +194,7 @@ td {
     color: #0091EA
 }
 
-.content {
+#rating .content {
     font-size: 18px
 }
 

@@ -1,5 +1,5 @@
 
-h1, h2, h3, h4, h5, h6 {
+#reviews h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
 }
 
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
     margin:15px;
 }
 
-a:hover i{
+#reviews a:hover i{
     color: gold;
 }
 
@@ -64,7 +64,7 @@ a:hover i{
 }
 
 
-.tekst{
+#reviews .tekst{
     margin-top:20px;
 }
 
@@ -101,7 +101,7 @@ a:hover i{
     margin-top:250px;
 }
 
-.naslov{
+#reviews .naslov{
     width: 100%;
     position: absolute;
     margin-left: auto;

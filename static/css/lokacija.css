@@ -121,6 +121,8 @@
     opacity: 80%;
     font-family: "Raleway", sans-serif;
     border: 5px solid #85b0be;
+    overflow: hidden;
+    font-size: 16px;
 }
 
 
