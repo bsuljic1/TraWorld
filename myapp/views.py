@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage
-from django.db.models import Count
+from django.db.models import Count, Avg
 
 
 def homepage(request):
@@ -55,6 +55,10 @@ def drzave_view(request, nazivKontinenta):
     kontinent = Kontinent.objects.get(naziv=nazivKontinenta)
     idKontinenta = kontinent.id
     drzave = Drzava.objects.filter(kontinentId=idKontinenta)
+
+    for drzava in drzave:
+        drzava.brojLokacija = Lokacija.objects.filter(drzavaId = drzava.id).count()
+
     return render(request, 'drzave.html', {'drzave': drzave})
 
 
@@ -64,8 +68,11 @@ def lokacije_view(request, nazivDrzave):
     idDrzave = drzava.id
     lokacije = Lokacija.objects.filter(drzavaId=idDrzave)
     kontinent = drzava.kontinentId
+
+    recenzije = Recenzija.objects.all().values('lokacijaId').annotate(total=Avg('ocjena'))
+
     return render(request, 'lokacije.html',
-                  {'lokacije': lokacije, 'drzava': drzava.naziv, 'kontinent': kontinent.naziv})
+                  {'lokacije': lokacije, 'drzava': drzava.naziv, 'kontinent': kontinent.naziv, 'recenzije':recenzije})
 
 
 @login_required(login_url="/login/")

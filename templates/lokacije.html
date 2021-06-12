@@ -15,8 +15,19 @@
                     </div>
                     {% for lokacija in lokacije %}
                         <div class="drzava">
+
+
                             <div class="drzava-slika">
+                                {% for r in recenzije %}
+                                    {% if r.lokacijaId == lokacija.id %}
+                                        <div class="ocjena">
+                                            <span class="fa fa-star zvijezda"><span>{{ r.total|floatformat:1 }}</span></span>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
                                 <img src={{ lokacija.glavna_slika.url }} alt="">
+
                             </div>
                             <div class="drzava-detalji">
                                 <p>{{ lokacija.naziv }}, {{ lokacija.grad }}</p>

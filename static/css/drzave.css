@@ -125,5 +125,39 @@
 
 .cont{
     width:85%;
-    margin:auto;
+    margin:auto;}
+
+.ocjena{
+    position:absolute;
+    z-index: 10;
+    margin-left:300px;
+    color:gold;
+    width:60px;
+    height: 60px;
+    font-size: 68px;
+
+}
+.ocjena .zvijezda i{
+    width: 100px;
+    height: 100px;
+    font-size: 58px;
+    position:absolute;
+    font-weight: bolder;
+    color:gold;
+    display:block;
+    margin-top:-20px;
+}
+
+.zvijezda span{
+    position:absolute;
+    z-index: 10;
+    color:white;
+    font-family: "Open Sans", sans-serif;
+    display:flex;
+  transform: translate(-50%, -50%);
+    font-size: 20px;
+    top:82%;
+    left:52%;
+    font-weight: bold;
+    text-shadow: #1d2124;
 }
