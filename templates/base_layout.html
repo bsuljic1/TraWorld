@@ -45,28 +45,49 @@
 
         <div class="container">
 
-            <div class="row  justify-content-center">
-                <div class="col-lg-6">
-                    <h3>TraWorld</h3>
-                    <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe
-                        commodi placeat.</p>
+            <div class="logo-info">
+                <div class="logo mr-auto">
+                    <a href=""><img src="{% static 'img/traworld.png' %}" alt="" class="logo-img"></a>
                 </div>
+                <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe
+                    commodi placeat.</p>
+                <div class="social-links">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+
             </div>
 
-            <div class="social-links">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+            <div class="podrska">
+                <h5>INFORMACIJE</h5>
+                <ul>
+                    <li><a href="#howitworks">Kako funkcioniše?</a></li>
+                    <li><a href="#services">Usluge</a></li>
+                    <li><a href="#contact">Kontakti</a></li>
+                    <li><a href="#">O nama</a></li>
+                </ul>
+
+            </div><div class="podrska">
+                <h5>KORISNI LINKOVI</h5>
+                <ul>
+                    <li><a href="{% url 'homepage' %}">Početna</a></li>
+                    <li><a href="{% url 'homepage' %}">Pretraga</a></li>
+                    <li><a href="#search-continents">Pretraga uz našu pomoć</a></li>
+                    <li><a href="{% url 'signup' %}">Registracija</a></li>
+                </ul>
             </div>
+
 
         </div>
     </div>
 
     <div class="container footer-bottom clearfix">
         <div class="copyright">
-            &copy; Copyright <strong><span>Vlava</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>TraWorld</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>

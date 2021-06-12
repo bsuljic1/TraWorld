@@ -1,6 +1,7 @@
 .search {
-    width: 40%;
+    width: 35%;
     font-family: "Raleway", sans-serif;
+    height: 50px;
 }
 
 
@@ -17,17 +18,6 @@
     border-radius: 50px;;
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .search form.search-box {
-        border: none
-    }
-}
-
-@media (max-width: 575px) {
-    .search form.search-box {
-        border: none
-    }
-}
 
 .search form.search-box .input-form {
     width: 79%;
@@ -37,24 +27,8 @@
     border-bottom-left-radius: 50px
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .search form.search-box .input-form {
-        width: 66%;
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px
-    }
-}
-
-@media (max-width: 575px) {
-    .search form.search-box .input-form {
-        width: 100%;
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px
-    }
-}
-
 .search form.search-box .input-form input {
-    height: 60px;
+    height: 50px;
     width: 100%;
     color: #777777;
     font-size: 18px;
@@ -66,76 +40,26 @@
     border-right: solid #e0e4f8;
 }
 
-@media (max-width: 575px) {
-    .search form.search-box .input-form input {
-        margin-bottom: 20px
-    }
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .search form.search-box .input-form input {
-        padding: 9px 33px 9px 25px;
-        margin-bottom: 20px
-    }
-}
-
-.search form.search-box .input-form input::placeholder {
-    color: #616875
-}
-
-@media (max-width: 575px) {
-    .search form.search-box .input-form input::placeholder {
-        font-size: 13px
-    }
-}
-
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .search form.search-box .input-form::before {
-        top: 38%
-    }
-}
-
-@media (max-width: 575px) {
-    .search form.search-box .input-form::before {
-        display: none
-    }
-}
 
 
 .search form.search-box .search-form {
     width: 21%;
     border-top-right-radius: 50px;
     overflow: hidden;
-    border-bottom-right-radius: 50px
+    border-bottom-right-radius: 50px;
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .search form.search-box .search-form {
-        width: 100%;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px
-    }
-}
-
-@media (max-width: 575px) {
-    .search form.search-box .search-form {
-        width: 100%;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px
-    }
-}
 
 .search form.search-box .search-form a {
     width: 100%;
-    height: 60px;
+    height: 50px;
     background: #2f626b;
     text-align: center;
     color: #fff;
     display: block;
-    padding: 15px;
+    padding: 10px;
     border-radius: 0px;
-    text-transform: capitalize;
     line-height: 31px;
-    font-size: 16px
+    font-size: 16px;
+    letter-spacing: 1px;
 }

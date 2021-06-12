@@ -1,0 +1,33 @@
+{% extends 'base_layout.html' %}
+{% block header %}
+    {% load static %}
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+
+            <div class="logo mr-auto">
+                    <a href=""><img src="{% static 'img/traworld.png' %}" alt="" class="logo-img"></a>
+            </div>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active" id="home"><a href="{% url 'homepage' %}">Početna</a></li>
+                    <li><a href="{% url 'homepage' %}?#search-continents">Pretraga</a></li>
+                    <li><a href="{% url 'homepage' %}?#howitworks">Kako funkcioniše?</a></li>
+                    <li><a href="{% url 'homepage' %}?#services">Usluge</a></li>
+                    <li><a href="{% url 'homepage' %}?#contact">Kontakti</a></li>
+                    {% if user.is_authenticated %}
+                        <li id="logout"><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li id="login"><a href="{% url 'login' %}">Prijavi se</a></li>
+                        <li id="register"><a href="{% url 'signup' %}">Registruj se</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+{% endblock %}
