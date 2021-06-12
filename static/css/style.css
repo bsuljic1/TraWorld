@@ -34,6 +34,9 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
 }
+
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -70,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 997;
     transition: all 0.5s;
     background: #052c3f;
-    padding: 22px 0;
+    padding: 20px 0;
 }
 
 #header.header-transparent {
@@ -79,35 +82,23 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled {
     background: rgba(5, 44, 63, 0.8);
-    padding: 15px 0;
-}
-
-#header .logo h1 {
-    font-size: 36px;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-#header .logo h1 a, #header .logo h1 a:hover {
-    color: #fff;
-    text-decoration: none;
+    padding: 12px 0;
 }
 
 #header .logo img {
     padding: 0;
     margin: 0;
-    max-height: 40px;
+    width:250px;
+    height: 50px;
 }
 
-@media (max-width: 768px) {
-    #header .logo h1 {
-        font-size: 28px;
-    }
+.logo{
+    vertical-align: middle;
+    margin:0;
+    padding: 0;
 }
+
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
