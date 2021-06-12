@@ -1,5 +1,5 @@
 .bread-crumbs{
-    margin-left:25px;
+    margin-left:90px;
     margin-bottom:0px;
 }
 
@@ -121,6 +121,8 @@
 #drzave{
     width:100%;
     background: #3b626f;
+    padding-bottom:0;
+    padding-top:90px;
 }
 
 .cont{
