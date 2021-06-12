@@ -1,0 +1,111 @@
+#top_lokacije .top_lokacije .container{
+    margin-top:0;
+}
+
+#top_lokacije{
+    background-color: #f6f9fa;
+    width: 100%;
+    height: 100vh;
+}
+
+.lokacije-div .lokacija {
+    position: relative
+}
+
+.lokacije-div .lokacija .lokacija-slika {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0
+}
+
+.lokacije-div .lokacija .lokacija-slika::before {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    content: "";
+    z-index: 1
+}
+
+.lokacije-div .lokacija .lokacija-slika img {
+    width: 380px;
+    height:300px;
+    transform: scale(1);
+    transition: all .5s ease-out 0s
+}
+
+.lokacije-div .lokacija .lokacija-detalji {
+    position: absolute;
+    left: 45px;
+    bottom: -9px;
+    right: 45px;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s
+}
+
+.lokacije-div .lokacija .lokacija-detalji p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700
+}
+
+.lokacije-div .lokacija .lokacija-detalji .location-btn {
+    padding: 10px 20px;
+    background: #fff;
+    color: #ff3d1c;
+    border-radius: 30px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.lokacije-div .lokacija .lokacija-detalji .location-btn:hover {
+    background: #3b626f;
+    color: #fff;
+}
+
+.lokacije-div .lokacija .lokacija-detalji .location-btn i {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: -3px
+}
+
+
+.lokacija:hover .lokacija-slika img {
+    transform: scale(1.1)
+}
+
+.lokacija:hover .lokacija-detalji {
+    bottom: 36px
+}
+
+.lokacija:hover .lokacija-detalji .location-btn {
+    opacity: 1;
+    visibility: visible
+}
+
+.lokacije-div .lokacija .lokacija-slika::before {
+    background-image: -moz-linear-gradient(90deg, #010a27 0%, #010a27 0%, rgba(6, 31, 120, 0.3) 70%, rgba(11, 52, 201, 0.01) 100%, #0b34c9 100%);
+    background-image: -webkit-linear-gradient(90deg, #010a27 0%, #010a27 0%, rgba(6, 31, 120, 0.3) 70%, rgba(11, 52, 201, 0.01) 100%, #0b34c9 100%);
+    background-image: -ms-linear-gradient(90deg, #010a27 0%, #010a27 0%, rgba(6, 31, 120, 0.3) 70%, rgba(11, 52, 201, 0.01) 100%, #0b34c9 100%)
+}
+.mb-30 {
+    margin-bottom: 30px
+}
+
+.lokacije-div{
+    width: 100%;
+    position:relative;
+}
+
+.lokacija{
+    display:inline-block;
+    width: 380px;
+    height: 300px;
+    margin: 20px;
+}

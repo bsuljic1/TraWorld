@@ -7,29 +7,30 @@
     <section id="drzave">
         <div class="drzave-div">
             <div class="cont">
-            <div class="bread-crumbs">
-                <a href="{% url 'drzave' nazivKontinenta=kontinent %}">{{ kontinent }}</a>
-                <i class="fa fa-caret-right bread"></i>
-                <a href="{% url 'lokacije' nazivDrzave=drzava %}">{{ drzava }}</a>
-            </div>
-                {% for lokacija in lokacije %}
-                    <div class="drzava">
-                        <div class="drzava-slika">
-                            <img src={{ lokacija.glavna_slika.url }} alt="">
-                        </div>
-                        <div class="drzava-detalji">
-                            <p>{{ lokacija.naziv }}, {{ lokacija.grad }}</p>
-                            <a href="{% url 'lokacija' nazivLokacije=lokacija.naziv %}" class="location-btn"><i class="ti-plus"></i>Više detalja</a>
-                        </div>
+                {% if lokacije.count != 0 %}
+                    <div class="bread-crumbs">
+                        <a href="{% url 'drzave' nazivKontinenta=kontinent %}">{{ kontinent }}</a>
+                        <i class="fa fa-caret-right bread"></i>
+                        <a href="{% url 'lokacije' nazivDrzave=drzava %}">{{ drzava }}</a>
                     </div>
-                {% endfor %}
-            </div>
-            <!-- More Btn -->
-            <div class="row justify-content-center">
-                <div class="room-btn pt-20">
-                    <a href="catagori.html" class="btn view-btn1">View All Places</a>
-                </div>
-            </div>
+                    {% for lokacija in lokacije %}
+                        <div class="drzava">
+                            <div class="drzava-slika">
+                                <img src={{ lokacija.glavna_slika.url }} alt="">
+                            </div>
+                            <div class="drzava-detalji">
+                                <p>{{ lokacija.naziv }}, {{ lokacija.grad }}</p>
+                                <a href="{% url 'lokacija' nazivLokacije=lokacija.naziv %}" class="location-btn"><i
+                                        class="ti-plus"></i>Više detalja</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    <h2>
+                        Nema rezultata.
+                    </h2>
+                {% endif %}
         </div>
     </section>
 {% endblock %}

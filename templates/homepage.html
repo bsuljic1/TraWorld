@@ -6,6 +6,7 @@
     <link href="{% static 'css/search.css' %}" rel="stylesheet">
     <link href="{% static 'css/kontinenti.css' %}" rel="stylesheet">
     <link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'css/homepage_top_locations.css' %}" rel="stylesheet">
 
     <section id="hero">
         <div class="hero-container">
@@ -35,7 +36,7 @@
                 <div class="row content">
                     <div class="col-lg-6">
                         <h2>Odaberi kontinent koji želiš posjetiti</h2>
-                        <h3>Svaki od 7 kontinenata ima prekrasne lokacije za posjetiti. Te destinacije čekaju tebe da
+                        <h3>Svaki od kontinenata ima prekrasne lokacije za posjetiti. Te destinacije čekaju tebe da
                             uživaš
                             istraživajući ih.</h3>
                         <h3>Ne možeš pogriješiti u svom odabiru, ali mi smo tu da ti olakšamo pretragu!</h3>
@@ -52,240 +53,190 @@
             </div>
         </section>
 
+     <!-- TOP LOKACIJE -->
+        <section id="top_lokacije" class="top_lokacije">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Top 10 popularnih lokacija</h2>
+                </div>
+
+                <div class="lokacije-div">
+                    {% for lokacija in top_lokacije %}
+                        <div class="lokacija">
+                            <div class="lokacija-slika">
+                                <img src={{ lokacija.podaci.glavna_slika.url }} alt="">
+                            </div>
+                            <div class="lokacija-detalji">
+                                <p>{{ lokacija.podaci.naziv }}, {{ lokacija.podaci.grad }}</p>
+                                <a href="{% url 'lokacija' nazivLokacije=lokacija.podaci.naziv %}" class="location-btn"><i
+                                        class="ti-plus"></i>Više detalja</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section><!-- End TOP LOKACIJE -->
+
         <section id="howitworks" class="howitworks">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- Section Tittle -->
-                            <div class="section-title">
-                                <h1>Istražuj jednostavno</h1>
-                                <h2>Kako sve funkcioniše?</h2>
-                            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Section Tittle -->
+                        <div class="section-title">
+                            <h1>Istražuj jednostavno</h1>
+                            <h2>Kako sve funkcioniše?</h2>
                         </div>
                     </div>
-                    <div class="row justify-content-between">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-services text-center mb-50">
-                                <div class="services-icon">
-                                    <span class="flaticon-list"></span>
-                                </div>
-                                <div class="services-cap">
-                                    <h5><a href="#">1. Odaberi kontinent</a></h5>
-                                    <p>Od 7 kontinenata, odaberi onaj o kojem već dugo razmišljaš. To možeš uraditi <a
-                                            href="#search-continents">ovako</a>.</p>
-                                </div>
-                                <!-- Shpape -->
-                                <img class="shape1 d-none d-lg-block" src="{% static 'img/serices1.png' %}" alt="">
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-list"></span>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-services text-center mb-50">
-                                <div class="services-icon">
-                                    <span class="flaticon-problem"></span>
-                                </div>
-                                <div class="services-cap">
-                                    <h5><a href="#">2. Pregledaj listu država</a></h5>
-                                    <p>Nakon odabira kontinenta, slikovito možeš vidjeti svaku državu koja se u njemu
-                                        nalazi, a potom odabrati onu koja te najviše privlači.</p>
-                                </div>
-                                <img class="shape2 d-none d-lg-block" src="{% static 'img/serices2.png' %}" alt="">
+                            <div class="services-cap">
+                                <h5><a href="#">1. Odaberi kontinent</a></h5>
+                                <p>Od 7 kontinenata, odaberi onaj o kojem već dugo razmišljaš. To možeš uraditi <a
+                                        href="#search-continents">ovako</a>.</p>
                             </div>
+                            <!-- Shpape -->
+                            <img class="shape1 d-none d-lg-block" src="{% static 'img/serices1.png' %}" alt="">
                         </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-services text-center mb-50">
-                                <div class="services-icon">
-                                    <span class="flaticon-respect"></span>
-                                </div>
-                                <div class="services-cap">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-problem"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">2. Pregledaj listu država</a></h5>
+                                <p>Nakon odabira kontinenta, slikovito možeš vidjeti svaku državu koja se u njemu
+                                    nalazi, a potom odabrati onu koja te najviše privlači.</p>
+                            </div>
+                            <img class="shape2 d-none d-lg-block" src="{% static 'img/serices2.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-respect"></span>
+                            </div>
+                            <div class="services-cap">
 
-                                    <h5><a href="#">3. Istražuj popularne destinacije</a></h5>
-                                    <p>Sada uživaj u pretragi svoje odabrane kategorije koja sadrži mnoštvo lokacija za
-                                        tebe!</p>
-                                </div>
+                                <h5><a href="#">3. Istražuj popularne destinacije</a></h5>
+                                <p>Sada uživaj u pretragi svoje odabrane kategorije koja sadrži mnoštvo lokacija za
+                                    tebe!</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- ======= Services Section ======= -->
-            <section id="services" class="services section-bg">
-                <div class="container">
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+            <div class="container">
 
-                    <div class="section-title">
-                        <h2>Usluge</h2>
-                        <p></p>
+                <div class="section-title">
+                    <h2>Usluge</h2>
+                    <p></p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="icofont-computer"></i></div>
+                        <h4 class="title"><a href="#hero">Pretraživanje lokacije unosom naziva</a></h4>
+                        <p class="description">Unesi naziv svoje željene destinacije u search-bar i doći ćeš do
+                            informacija o njoj.</p>
                     </div>
-
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 icon-box">
-                            <div class="icon"><i class="icofont-computer"></i></div>
-                            <h4 class="title"><a href="#pocetna">Pretraživanje lokacije unosom naziva</a></h4>
-                            <p class="description">Unesi naziv svoje željene destinacije u search-bar i doći ćeš do informacija o njoj.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 icon-box">
-                            <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-                            <h4 class="title"><a href="">Dodavanje nove lokacije</a></h4>
-                            <p class="description">Ukoliko lokacija koju si posjetio ne postoji u našem sistemu, možeš je dodati kako bi olakšao drugim ljubiteljima putovanja.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 icon-box">
-                            <div class="icon"><i class="icofont-earth"></i></div>
-                            <h4 class="title"><a href="">Ocjenjivanje lokacije i recenzije</a></h4>
-                            <p class="description">Možeš vidjeti ocjene i komentare drugih o nekoj lokaciji, kao i dodati svoj komentar i ocjenu o lokaciji koju si posjetio.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 icon-box">
-                            <div class="icon"><i class="icofont-image"></i></div>
-                            <h4 class="title"><a href="#search-continents">Istraživanje destinacija uz našu pomoć</a></h4>
-                            <p class="description">Odaberi kontinent, potom državu, i došao si do nekoliko destinacija od kojih jedna može postati tvoja destinacija iz snova.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 icon-box">
-                            <div class="icon"><i class="icofont-settings"></i></div>
-                            <h4 class="title"><a href="">Pregled najpopularnijih lokacija</a></h4>
-                            <p class="description">U svakom trenutku, na našoj stranici možeš vidjeti trenutnih 10 top lokacija ocijenjenih
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="icofont-tasks-alt"></i></div>
+                        <h4 class="title"><a href="">Dodavanje nove lokacije</a></h4>
+                        <p class="description">Ukoliko lokacija koju si posjetio ne postoji u našem sistemu, možeš je
+                            dodati kako bi olakšao drugim ljubiteljima putovanja.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="icofont-settings"></i></div>
+                        <h4 class="title"><a href="">Ocjenjivanje lokacije i recenzije</a></h4>
+                        <p class="description">Možeš vidjeti ocjene i komentare drugih o nekoj lokaciji, kao i dodati
+                            svoj komentar i ocjenu o lokaciji koju si posjetio.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="icofont-earth"></i></div>
+                        <h4 class="title"><a href="#search-continents">Istraživanje destinacija uz našu pomoć</a></h4>
+                        <p class="description">Odaberi kontinent, potom državu, i došao si do nekoliko destinacija od
+                            kojih jedna može postati tvoja destinacija iz snova.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+                        <h4 class="title"><a href="">Pregled najpopularnijih lokacija</a></h4>
+                        <p class="description">U svakom trenutku, na našoj stranici možeš vidjeti trenutnih 10 top
+                            lokacija ocijenjenih
                             od strane korisnika naše stranice.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 icon-box">
-                            <div class="icon"><i class="icofont-tasks-alt"></i></div>
-                            <h4 class="title"><a href="">Pregled lokacije</a></h4>
-                            <p class="description">Pregledaj sve informacije o lokaciji, razne zanimljivosti, galeriju slika, mapu lokacije, sve na jednom mjestu.</p>
-                        </div>
                     </div>
-
-                </div>
-            </section><!-- End Services Section -->
-
-
-            <!-- ======= Frequently Asked Questions Section ======= -->
-            <section id="faq" class="faq">
-                <div class="container">
-
-                    <div class="section-title">
-                        <h2>Top 10 popularnih lokacija</h2>
-                    </div>
-
-                    <div class="row  d-flex align-items-stretch">
-
-                        <div class="col-lg-6 faq-item">
-                            <i class="bx bx-help-circle"></i>
-                            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
-                            <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                non.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-6 faq-item">
-                            <i class="bx bx-help-circle"></i>
-                            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
-                            <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                velit
-                                laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                pretium.
-                                Est pellentesque elit ullamcorper dignissim.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-6 faq-item">
-                            <i class="bx bx-help-circle"></i>
-                            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
-                            <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                pulvinar
-                                elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                                pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-6 faq-item">
-                            <i class="bx bx-help-circle"></i>
-                            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
-                            <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                velit
-                                laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                pretium.
-                                Est pellentesque elit ullamcorper dignissim.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-6 faq-item">
-                            <i class="bx bx-help-circle"></i>
-                            <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
-                            <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                adipiscing
-                                bibendum est. Purus gravida quis blandit turpis cursus in
-                            </p>
-                        </div>
-
-                        <div class="col-lg-6 faq-item">
-                            <i class="bx bx-help-circle"></i>
-                            <h4>Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem
-                                dolor?</h4>
-                            <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                integer
-                                malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem
-                                dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section><!-- End Frequently Asked Questions Section -->
-
-            <!-- ======= Contact Section ======= -->
-            <section id="contact" class="contact section-bg">
-                <div class="container">
-
-                    <div class="section-title">
-                        <h2>Contact</h2>
-                        <p>Magnam dolores commodi suscipituia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="icofont-image "></i></div>
+                        <h4 class="title"><a href="">Pregled lokacije</a></h4>
+                        <p class="description">Pregledaj sve informacije o lokaciji, razne zanimljivosti, galeriju
+                            slika, mapu lokacije, sve na jednom mjestu.</p>
                     </div>
                 </div>
-                <div class="map">
-                    <iframe style="border:0; width: 100%; height: 350px;"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                            frameborder="0" allowfullscreen></iframe>
+
+            </div>
+        </section><!-- End Services Section -->
+
+
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Magnam dolores commodi suscipituia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
-                <div class="container">
-                    <div class="row mt-5 justify-content-center">
+            </div>
+            <div class="map">
+                <iframe style="border:0; width: 100%; height: 350px;"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
 
-                        <div class="col-lg-10">
+                    <div class="col-lg-10">
 
-                            <div class="info-wrap">
-                                <div class="row">
-                                    <div class="col-lg-4 info">
-                                        <i class="icofont-google-map"></i>
-                                        <h4>Location:</h4>
-                                        <p>A108 Adam Street<br>New York, NY 535022</p>
-                                    </div>
+                        <div class="info-wrap">
+                            <div class="row">
+                                <div class="col-lg-4 info">
+                                    <i class="icofont-google-map"></i>
+                                    <h4>Location:</h4>
+                                    <p>A108 Adam Street<br>New York, NY 535022</p>
+                                </div>
 
-                                    <div class="col-lg-4 info mt-4 mt-lg-0">
-                                        <i class="icofont-envelope"></i>
-                                        <h4>Email:</h4>
-                                        <p>info@example.com<br>contact@example.com</p>
-                                    </div>
+                                <div class="col-lg-4 info mt-4 mt-lg-0">
+                                    <i class="icofont-envelope"></i>
+                                    <h4>Email:</h4>
+                                    <p>info@example.com<br>contact@example.com</p>
+                                </div>
 
-                                    <div class="col-lg-4 info mt-4 mt-lg-0">
-                                        <i class="icofont-phone"></i>
-                                        <h4>Call:</h4>
-                                        <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
-                                    </div>
+                                <div class="col-lg-4 info mt-4 mt-lg-0">
+                                    <i class="icofont-phone"></i>
+                                    <h4>Call:</h4>
+                                    <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
 
-
                 </div>
-            </section><!-- End Contact Section -->
+
+
+            </div>
+        </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
 

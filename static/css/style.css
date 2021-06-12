@@ -1,6 +1,7 @@
 
 body {
-    font-family: "Open Sans", sans-serif;
+
+    font-family: "Raleway", sans-serif;
     color: #444444;
 }
 
@@ -220,112 +221,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Mobile Navigation */
-.mobile-nav-toggle {
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    z-index: 9998;
-    border: 0;
-    background: none;
-    font-size: 24px;
-    transition: all 0.4s;
-    outline: none !important;
-    line-height: 1;
-    cursor: pointer;
-    text-align: right;
-}
-
-.mobile-nav-toggle i {
-    color: #fff;
-}
-
-.mobile-nav {
-    position: fixed;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    z-index: 9999;
-    overflow-y: auto;
-    background: #fff;
-    transition: ease-in-out 0.2s;
-    opacity: 0;
-    visibility: hidden;
-    border-radius: 10px;
-    padding: 10px 0;
-}
-
-.mobile-nav * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.mobile-nav a {
-    display: block;
-    position: relative;
-    color: #052c3f;
-    padding: 10px 20px;
-    font-weight: 500;
-    outline: none;
-}
-
-.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-    color: #85b0be;
-    text-decoration: none;
-}
-
-.mobile-nav .drop-down > a:after {
-    content: "\ea99";
-    font-family: IcoFont;
-    padding-left: 10px;
-    position: absolute;
-    right: 15px;
-}
-
-.mobile-nav .active.drop-down > a:after {
-    content: "\eaa1";
-}
-
-.mobile-nav .drop-down > a {
-    padding-right: 35px;
-}
-
-.mobile-nav .drop-down ul {
-    display: none;
-    overflow: hidden;
-}
-
-.mobile-nav .drop-down li {
-    padding-left: 20px;
-}
-
-.mobile-nav-overly {
-    width: 100%;
-    height: 100%;
-    z-index: 9997;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: rgba(1, 11, 16, 0.6);
-    overflow: hidden;
-    display: none;
-    transition: ease-in-out 0.2s;
-}
-
-.mobile-nav-active {
-    overflow: hidden;
-}
-
-.mobile-nav-active .mobile-nav {
-    opacity: 1;
-    visibility: visible;
-}
-
-.mobile-nav-active .mobile-nav-toggle i {
-    color: #fff;
-}
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -510,36 +405,6 @@ section {
     color: #85b0be;
 }
 
-/*--------------------------------------------------------------
-# Frequently Asked Questions
---------------------------------------------------------------*/
-.faq {
-    padding-top: 0;
-}
-
-.faq .faq-item {
-    margin-bottom: 40px;
-}
-
-.faq .faq-item i {
-    color: #85b0be;
-    font-size: 30px;
-    float: left;
-    line-height: 1;
-    padding: 0;
-    margin: 0;
-}
-
-.faq .faq-item h4 {
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: 600;
-    margin: 0 0 10px 40px;
-}
-
-.faq .faq-item p {
-    margin-left: 40px;
-}
 
 /*--------------------------------------------------------------
 # Contact
@@ -623,7 +488,6 @@ section {
 .bread-crumbs a {
     color: white;
 }
-
 
 .bread-crumbs .bread {
     color: white;
