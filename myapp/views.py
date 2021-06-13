@@ -10,7 +10,7 @@ from django.db.models import Count, Avg
 def homepage(request):
     kontinenti = Kontinent.objects.all().order_by('naziv')
 
-    top_lokacije = Recenzija.objects.all().values('lokacijaId').annotate(total=Count('lokacijaId')).order_by('total')[:10]
+    top_lokacije = Recenzija.objects.all().values('lokacijaId').annotate(total=Count('lokacijaId')).order_by('-total')[:8]
 
     for location in top_lokacije:
         location['podaci'] = Lokacija.objects.get(id=location['lokacijaId'])
@@ -79,6 +79,7 @@ def lokacije_view(request, nazivDrzave):
 @login_required(login_url="/login/")
 def lokacija_view(request, nazivLokacije):
     lokacija = Lokacija.objects.get(naziv=nazivLokacije)
+
     if request.method == 'POST':
         recenzija = Recenzija()
         recenzija.tekst = request.POST.get('review')
@@ -94,7 +95,8 @@ def lokacija_view(request, nazivLokacije):
     ocjena = 0
     for o in ocjene:
         ocjena = ocjena + o.ocjena
-    ocjena = ocjena / (brojOcjena)
+    if(ocjena != 0):
+        ocjena = ocjena / (brojOcjena)
 
     ocjena5 = ocjene.filter(ocjena=5).all().__len__()
     ocjena4 = ocjene.filter(ocjena=4).all().__len__()
@@ -102,11 +104,18 @@ def lokacija_view(request, nazivLokacije):
     ocjena2 = ocjene.filter(ocjena=2).all().__len__()
     ocjena1 = ocjene.filter(ocjena=1).all().__len__()
 
-    ocjena5_bar = (ocjena5 / brojOcjena) * 100
-    ocjena4_bar = (ocjena4 / brojOcjena) * 100
-    ocjena3_bar = (ocjena3 / brojOcjena) * 100
-    ocjena2_bar = (ocjena2 / brojOcjena) * 100
-    ocjena1_bar = (ocjena1 / brojOcjena) * 100
+    if(brojOcjena != 0):
+        ocjena5_bar = (ocjena5 / brojOcjena) * 100
+        ocjena4_bar = (ocjena4 / brojOcjena) * 100
+        ocjena3_bar = (ocjena3 / brojOcjena) * 100
+        ocjena2_bar = (ocjena2 / brojOcjena) * 100
+        ocjena1_bar = (ocjena1 / brojOcjena) * 100
+    else:
+        ocjena5_bar = 0
+        ocjena4_bar = 0
+        ocjena3_bar = 0
+        ocjena2_bar = 0
+        ocjena1_bar = 0
 
     recenzije1 = ocjene.all()
     p = Paginator(recenzije1, 3)

@@ -27,10 +27,11 @@
 }
 
 .lokacija .lokacija-img img {
-    max-width: 100%;
+    width: 100%;
     border: 4px solid #85b0be;
     position: relative;
     vertical-align: center;
+    height: 300px;
 }
 
 .lokacija .lokacija-img::before {
@@ -116,7 +117,7 @@
 
 .lokacija .kont2 p {
     width: 100%;
-    height: 50vh;
+    height: 300px;
     background: rgba(252, 252, 252, 0.95);
     padding: 25px 25px 25px 25px;
     opacity: 80%;

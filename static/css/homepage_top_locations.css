@@ -2,12 +2,22 @@
     margin-top:0;
 }
 
+#top_lokacije .section-title{
+    margin-bottom:0;
+    padding-bottom:0;
+}
+
 #top_lokacije{
     background-color: #f6f9fa;
     width: 100%;
-    height: 100vh;
 }
 
+.lokacije-div{
+    width: 100%;
+    margin-left:0;
+    margin-right:0;
+    padding:0;
+}
 .lokacije-div .lokacija {
     position: relative
 }
@@ -29,8 +39,8 @@
 }
 
 .lokacije-div .lokacija .lokacija-slika img {
-    width: 380px;
-    height:300px;
+    width: 325px;
+    height:245px;
     transform: scale(1);
     transition: all .5s ease-out 0s
 }
@@ -49,8 +59,8 @@
 
 .lokacije-div .lokacija .lokacija-detalji p {
     color: #fff;
-    font-size: 30px;
-    font-weight: 700
+    font-size: 24px;
+    font-weight: 600
 }
 
 .lokacije-div .lokacija .lokacija-detalji .location-btn {
@@ -98,14 +108,21 @@
     margin-bottom: 30px
 }
 
-.lokacije-div{
+#top_lokacije .container .lokacije-div{
     width: 100%;
     position:relative;
+    margin-left:auto;
+    margin-right: auto;
+    align-items: center;
 }
 
 .lokacija{
     display:inline-block;
-    width: 380px;
-    height: 300px;
+    width: 325px;
+    height: 245px;
     margin: 20px;
+}
+
+#top_lokacije .container{
+    min-width: 100%;
 }
