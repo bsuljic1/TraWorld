@@ -1,7 +1,7 @@
 #hero {
     width: 100%;
     height: 100vh;
-    background: url("../img/login-bgg.jpg") top center;
+    background: url("../img/photo-1557683316-973673baf926.jpg") top center;
     background-size: cover;
     position: relative;
 }
@@ -17,12 +17,17 @@
 
 .forma {
     font-family: "Raleway", sans-serif;
-    background-color: lightgray;
-    padding: 30px;
-    border: 1.5pt black solid;
-    box-shadow: #1d2124;
-    border-radius: 12px;
-    width: 25%;
+    width: 30%;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.12);
+    padding: 40px;
+    background: #fff;
+    margin-top: 20px;
+}
+
+#hero .hero-container .forma h1{
+    color:#85b0be;
+
+    letter-spacing: 4px;
 }
 
 .login-forma {
@@ -33,8 +38,14 @@
     align-items: flex-start;
 }
 
-input {
+.forma input {
     width: 100%;
+    height: 40px;
+    font-size: 14px;
+}
+
+input{
+    border-color: #85b0be;
 }
 
 .forma label {
@@ -45,15 +56,39 @@ input {
 #login-submit {
     font-family: "Raleway", sans-serif;
     text-transform: uppercase;
+    height: 50px;
     font-weight: 500;
     font-size: 16px;
-    letter-spacing: 1px;
     display: inline-block;
     padding: 10px 28px;
-    border-radius: 9px;
     transition: 0.5s;
     border: 2px solid #85b0be;
     margin-top: 30px;
     width: 100%;
     background: #85b0be;
+    letter-spacing: 5px;
+}
+
+
+.lozinka{
+    margin-top:20px;
+    display: flex;
+}
+
+.lozinka a{
+    margin-left:120px;
+}
+
+.lozinka input{
+    height: 15px;
+    width:max-content;
+    float: left;
+    line-height: 1.5em;
+    margin-top:4px;
+}
+
+.lozinka label{
+    margin-top: 0;
+    line-height: 1.5em;
+    margin-left:7px;
 }

@@ -4,15 +4,21 @@
     {% load static %}
     <link href="{% static 'css/login-style.css' %}" rel="stylesheet">
     <section id="hero">
-    <div class="hero-container">
-        <div class="forma">
-            <h1>Prijavi se</h1>
-            <form class="login-forma" action="{% url 'login' %}" method="post">
-                {% csrf_token %}
-                {{ form }}
-                <input id="login-submit" type="submit" value="Login">
-            </form>
+        <div class="hero-container">
+            <div class="forma">
+                <h1>Prijavi se</h1>
+                <form class="login-forma" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+
+                    <div class="lozinka">
+                        <input type="checkbox" name="zapamti">
+                        <label for="zapamti">Zapamti me</label>
+                        <a href="">Promjena lozinke?</a>
+                    </div>
+                    <input id="login-submit" type="submit" value="Login">
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

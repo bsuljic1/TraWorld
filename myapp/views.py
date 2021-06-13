@@ -28,6 +28,7 @@ def signup_view(request):
             return redirect('homepage')
     else:
         form = UserCreationForm()
+        form.fields['password2'].label = "Potvrdi password"
     return render(request, 'signup.html', {'form': form})
 
 

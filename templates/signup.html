@@ -14,7 +14,10 @@
                 <form class="login-forma" action="{% url 'signup' %}" method="post">
                     {% csrf_token %}
                     {{ form }}
-                    <input id="signup-submit" type="submit" value="Signup">
+                    <div class="help">
+                        <p>Password mora sadržavati bar 8 karaktera i ne može biti previše sličan tvom username-u.</p>
+                    </div>
+                    <input id="login-submit" type="submit" value="Registruj se">
                 </form>
             </div>
         </div>

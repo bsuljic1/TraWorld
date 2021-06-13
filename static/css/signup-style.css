@@ -1,10 +1,14 @@
 .forma {
-    width: 42%;
+    width: 35%;
     margin-top: 60px;
 }
 
+.login-forma{
+    margin-top:40px;
+}
+
 .helptext {
-    align-items: flex-start;
+    display: none;
 }
 
 #register{
@@ -15,4 +19,19 @@
 #login a{
     color: white;
 }
+
+.help{
+    text-align: left;
+    color: #85b0be
+}
+
+.forma label{
+    margin-top: 0;
+}
+
+#login-submit{
+    margin-top: 10px;
+}
+
+
 
