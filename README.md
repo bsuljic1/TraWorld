@@ -7,15 +7,15 @@ Na svijetu postoji toliko lijepih destinacija za posjetiti, upoznati i doživjet
 Aplikacija TraWorld će biti dostupna svakom korisniku, ali korisnik mora biti registrovan kako bi koristio određene funkcionalnosti aplikacije. Neregistrovan korisnik može samo pregledati početnu stranicu koja opisuje rad stranice i njene usluge. S druge strane, registrovani korisnici mogu istraživati lokacije za posjetiti, ocijenjivati lokacije, ostavljati recenzije, pregledati recenzije drugih korisnika, vidjeti sve informacije o traženoj lokaciji. Admin može upravljati bazom podataka.
 
 # Funkcionalnosti aplikacije
-•	Pretraživanje lokacije za posjetiti koristeći search box
-•	Pretraživanje lokacija koristeći navigaciju stranice
-•	Pregledanje informacija o lokaciji 
-•	Pregled galerije slika za odabranu lokaciju
-•	Pregled recenzija i ocjena za odabranu lokaciju
-•	Pregled atraktivnih, izdvojenih, top lokacija koje je ocijenilo najveći broj korisnika
-•	Registrovanje na stranicu i prijava
-•	Dodavanje recenzije/komentara i ocjenjivanje lokacije
-•	Pregled usluga, kontakta i uputa za korištenje
+- Pretraživanje lokacije za posjetiti koristeći search box
+- Pretraživanje lokacija koristeći navigaciju stranice
+- Pregledanje informacija o lokaciji 
+- Pregled galerije slika za odabranu lokaciju
+- Pregled recenzija i ocjena za odabranu lokaciju
+- Pregled atraktivnih, izdvojenih, top lokacija koje je ocijenilo najveći broj korisnika
+- Registrovanje na stranicu i prijava
+- Dodavanje recenzije/komentara i ocjenjivanje lokacije
+- Pregled usluga, kontakta i uputa za korištenje
 
 
 
