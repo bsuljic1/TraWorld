@@ -233,6 +233,14 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
 }
 
+#hero .slogan{
+    margin-top:0;
+    color: white;
+    margin-left:210px;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
 #hero .hero-container {
     position: absolute;
     bottom: 0;
@@ -457,7 +465,7 @@ section {
 }
 
 .bread-crumbs a {
-    color: white;
+    color: #96bbc7;
 }
 
 .bread-crumbs .bread {
@@ -468,6 +476,11 @@ section {
 .bread-crumbs a:hover {
     color: #96bbc7;
     cursor: pointer;
+}
+
+.bread-crumbs p{
+    display: inline-block;
+    margin-bottom: 40px;
 }
 
 
